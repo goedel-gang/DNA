@@ -1,0 +1,32 @@
+I think the primary advantage of BK-trees comes in when you have a larger tree like so:
+
+:book(
+	1:books(
+		2:boo(
+			1:boon(
+
+			)
+ 			2:cook(
+
+			)
+
+		)
+
+	)
+ 	4:cake(
+		1:cape(
+
+		)
+ 		2:cart(
+
+		)
+
+	)
+
+)
+
+When querying for 'caqe' with a tolerance of 1, it makes a comparison with 'book', sees it is too far away, makes a comparison with 'books' and sees it is not in the range from d(caqe, book) - tolerance to d(caque, book) + tolerance so doesn't continue to crawl down the books branch, as there will be no further possible matches. I think that this in itself is quite efficient, but the costly step is to try and build a tree every time
+
+From https://nullwords.wordpress.com/2013/03/13/the-bk-tree-a-data-structure-for-spell-checking/
+
+Izaak

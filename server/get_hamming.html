@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Get Hamming DNA barcodes</title>
+		
+		<style type='text/css'>
+		</style>
+
+	</head>
+	<body>
+
+	<form action="cgi-bin/get_hamming.cgi" method="POST">
+		Obtain distinct error-correcting DNA barcodes. The number of codes you get will have the form 4<sup>n</sup>. Enter the desired value of n<br />
+		<input type="text" name="len" /> <br />
+
+		<input type="submit" value="Submit" />
+	</form>
+
+	<p>
+		Barcodes can be decoded <a href='decode_hamming.html'>here</a>
+	</p>
+
+	</body>
+
+</html>
+		

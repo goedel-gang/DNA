@@ -1,0 +1,5 @@
+Hi Leo,
+The Hamming code (as lots of other codes) has an alphabet of 2, but I need an alphabet of 4. Would it work to just convert the binary into base 4, and back, for this? I would then need a Hamming code of length 12, which could correct one error if I used the 'General Algorithm' on Wikipedia. I don't think I can see any specific codes of length 12 which could correct more, or any general guideline for correcting more.
+I've made another sieve, which uses a function to compute levenshtein distance I found, and a checker. I also realised that as 4096 isn't that high, I could try running my sieves on all possible keys. Using my old sieve (Hamming distance) I got 64 words, using the levenshtein sieve I got 96.
+When Googling about levenshtein distance, I found a structure called a BK-tree, which is used for spelling correction. I think it could be useful in this task, potentially for use in my sieve. I've started to implement it. It can construct a tree and add more words, but it doesn't yet do membership testing.
+Izaak

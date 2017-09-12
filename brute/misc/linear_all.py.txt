@@ -1,0 +1,51 @@
+import sys
+
+base = sys.argv[1]
+
+chrs = '0123456789abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+
+if base.isdigit():
+	if int(base) < len(chrs):
+		base = int(base)
+		alpha = chrs[:base]
+	else:
+		alpha = none
+		base = int(base)
+
+else:
+	alpha = base
+	base = len(alpha)
+
+length = int(sys.argv[2])
+
+curr = [0 for _ in range(length)]
+
+if alpha:
+	print ''.join(alpha[i] for i in curr)
+
+else:
+	print curr
+
+while sum(curr) != base * length - length:
+	curr[-1] += 1
+
+	if curr[-1] == base:
+		curr[-1] = 0
+
+		for i in reversed(xrange(length - 1)):
+			if curr[i] == base - 1:
+				curr[i] = 0
+
+			else:
+				curr[i] += 1
+				break
+
+	if alpha:
+		print ''.join(alpha[i] for i in curr)
+
+	else:
+		print curr
+
+#	print sum(curr)
+#	print base, length
+#	print base * length - base

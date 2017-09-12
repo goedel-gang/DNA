@@ -1,0 +1,6 @@
+# DNA
+My various projects from my brief work experience at the Wellcome Trust Sanger Institute, where I did a project on error-correction in DNA strings. Features various approaches, including Hadamard codes moved forcibly to base-4, and a base-4 adaptation of the Hamming code, where parity is extended into value-mod-4.
+
+It also has some simple Python CGI scripts implementing some of the found approaches in a very simplistic web interface.
+
+[Here](..link..) is the accompanying presentation I made for the end of my stay.

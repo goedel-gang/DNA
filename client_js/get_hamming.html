@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Get Hamming DNA barcodes</title>
+		
+		<style type='text/css'>
+			div#out {
+				background-color: #EEE;
+				font-family: courier;
+				padding: 5px;
+			}
+
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<script>
+			var translate = {0: 'A', 1: 'C', 2: 'G', 3: 'T'};
+
+			$(document).ready(function() {
+
+				$('button#len_button').click(function() {
+					var len = Number($('input#len_input').val());
+
+					var poss_data = get_data(len);
+
+					var $outdiv = $('div#out');
+
+					$outdiv.empty();
+
+					for (x = 0; x < Math.pow(4, len); x++) {
+
+						var coded = hamming_encode(poss_data[x]);
+
+						for (j = 0; j < coded.length; j++) {
+							$outdiv.append(translate[coded[j]]);
+						}
+
+						$outdiv.append('<br />');
+
+					}
+
+				});
+
+			});
+
+			var is_power = function(n) {
+				return ! (n & (n - 1));
+
+			}
+
+			var get_data = function(len, word = []) {
+				if (word.length < len)  {
+					return get_data(len, word.concat([0])).concat(get_data(len, word.concat([1]))).concat(get_data(len, word.concat([2]))).concat(get_data(len, word.concat([3])));
+					
+
+				}  else {
+					return [word];
+
+				}
+			}
+
+			var hamming_encode = function(data) {
+				var code = [];
+
+				while (data.length > 0) {
+					if (is_power(code.length + 1)) {
+						code.push(-1);
+					} else {
+						code.push(data.shift());
+					}
+				}
+
+				if (code[code.length - 1] == -1) {
+					code.pop()
+				}
+
+				for (i = 0; i < code.length; i++) {
+					if (code[i] == -1) {
+						var tally = 0;
+						for (j = i + 1; j < code.length; j++) {
+							if ((j + 1) & (i + 1)) {
+								tally += code[j];
+							}
+
+						}
+
+						code[i] = tally % 4;
+
+					}
+				}
+
+				return code;
+			}
+
+		</script>
+
+	</head>
+	<body>
+
+	<p>Obtain distinct error-correcting DNA barcodes. The number of codes you get will have the form 4<sup>n</sup>. Enter the desired value of n<br /></p>
+	<input id='len_input' type='text' />
+
+	<button id='len_button'>submit</button> <br />
+
+	<p>Barcodes can be decoded <a href='decode_hamming.html'>here</a></p>
+
+	<div id='out' />
+
+	</body>
+
+</html>
+		

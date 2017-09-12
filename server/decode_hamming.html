@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Decode Hamming DNA barcodes</title>
+
+		<style type='text/css'>
+			form#decode_hamming textarea {
+				height: 500px;
+				width: 300px;
+				font-family: courier;
+				font-size: 15px;
+
+			}
+
+		</style>
+		
+	</head>
+	<body>
+
+	<form id='decode_hamming' action="cgi-bin/decode_hamming.cgi" method="POST">
+		Enter barcodes to decode, separated by newlines. Output will be a decimal number from 1 to 4<sup>n</sup> for each barcode<br />
+		<textarea name='codes' form='decode_hamming' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+
+		<input type="submit" value="Submit" />
+	</form>
+
+	<p>
+		Barcodes can be obtained <a href='get_hamming.html'>here</a>
+	</p>
+
+	</body>
+
+</html>
+		

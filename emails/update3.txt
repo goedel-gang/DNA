@@ -1,0 +1,6 @@
+Hi Leo,
+In a BK-tree, where x2 is as far from y as x1, x2 would then be added to x1, I think. The idea of using one would be to minimise the number of comparisons made, as even the optimised levenshtein function I found is quite expensive to use. However when applying them to this the number of comparisons they need to make to add an item makes them less useful, which is presumably why they're not used much in coding theory. I think they work better on larger sets of words, where more words are of equal distance from each other - such as all of the words in the English language, in use for spell-checking. I wrote a sieve using a BK-tree which was twice as slow as just brute forcing, so I think that maybe I'll try something else.
+I've started working on Hamming codes but it doesn't all quite work yet.
+I've also managed to get oligotm working. Is the idea for me to just generate as many codes as I can, and see how many get past a certain temperature constraint?
+
+Izaak

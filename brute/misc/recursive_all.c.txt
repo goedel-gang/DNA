@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void get_bin(int base, int fin_len, int curr_len, int *code) {
+
+	if (fin_len == curr_len) {
+		for (int i = 0; i < fin_len; i++) {
+			printf("%d", code[i]);
+		}
+
+		printf("\n");
+
+	} else {
+		code[curr_len] = 0;
+		get_bin(base, fin_len, curr_len + 1, code);
+
+		code[curr_len] = 1;
+		get_bin(base, fin_len, curr_len + 1, code);
+
+	}
+
+}
+
+int main() {
+
+	int code[20];
+
+	get_bin(2, 20, 0, code);
+
+	return 0;
+
+}

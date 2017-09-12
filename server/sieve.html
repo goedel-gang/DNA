@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Sieve DNA barcodes</title>
+
+		<style type='text/css'>
+			form#sieve_codes textarea {
+				height: 500px;
+				width: 300px;
+				font-family: courier;
+				font-size: 15px;
+
+			}
+
+		</style>
+		
+	</head>
+	<body>
+		<form id='sieve_codes' action="cgi-bin/sieve.cgi" method="POST">
+			Enter the minimum oligotm temperature<br />
+			<input type='text' name='min' value='-inf' /><br />
+
+			Enter the maximum oligotm temperature<br />
+			<input type='text' name='max' value='inf' /><br />
+
+			Enter the code preceding the barcodes<br />
+			<input type='text' name='head' /><br />
+
+			Enter the minimum distance between codes<br />
+			<input type='text' name='diff' value='3' /><br />
+
+			Enter barcodes to sieve<br />
+			<textarea name='codes' form='sieve_codes' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea> <br />
+
+			<input type="submit" value="Submit" />
+		</form>
+
+	</body>
+
+</html>
+		

@@ -1,0 +1,9 @@
+Hi Leo,
+
+I've written and reasonably tested some Python defining classes for an algebraic term and a polynomial, which I've then used to recreate the example on wikipedia. I've started trying to apply this to the task, without great success - in the comments you can see me generating a random polynomial, which I was doing to see what sort of generator polynomial would work well. So far I've found a set of 11 codewords using it.
+I had a look at sphere packing, but haven't yet been able to find something I can easily implement. Resources I found online quickly became very mathematics-intensive, and haven't include much I can directly put to use - this happens quite in most of the areas of codes, though.
+Yesterday, I'd written a 'sieve' to read codewords, and print each one if it wasn't too close to a previous codework. I also wrote a checking program, which compares all of the input to all of the input and flags up any codewords that are too close. Both of these are probably inoptimally written, which I think I could improve, and today I found that the function I was using to check if two codewords were close wasn't working properly, and hopefully debugged it a bit.
+Yesterday I had also written a program to randomly generate codes, and ran that through the sieve, with which I managed to find 23 words last time (with the fualty sieve) by running it repeatedly until I got 23, using a command in zsh. Armed with my new sieve, I found a set of 80 today, which hopefully work. The algorithm my sieve uses could probably also be improved upon, to ouput as many codes as possible.
+I've attached any noteworthy files.
+
+Izaak

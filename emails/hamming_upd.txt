@@ -1,0 +1,9 @@
+Hi Leo,
+
+So I've now implemented the single error correcting Hamming code, encoding and decoding it, for an arbitrary number of bits. This means I can generate 256 binary strings of length 12 (encoding strings of length 8), introduce a single error to them, and then correctly decode each string.
+The next problem is putting this to use in base 4. I guess I could either just directly try to translate binary to base 4, but if it can only correct a single error, it could not detect certain mutations (say A is 00, C is 01, G is 10, T is 11, it couldn't detect A -> T or C -> G). I could see if I could get it to correct more errors, maybe with an additional parity bit?
+Alternatively, I could try and come up with some equivalent of the Hamming code in base 4, but this might not be entirely possible, not sure.
+After just Googling about Hamming codes in higher bases, I came across this article: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3355179/
+I haven't yet had time to fully read it, but it looks promising. It appears to deal with exactly this, I'll see what I can do
+
+Izaak

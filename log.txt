@@ -1,0 +1,91 @@
+IUD: 109604
+
+task: generating as many strings using the 4 DNA bases (acgt) of length 6, with a Hamming distance of at least 2.
+
+thoughts/observations:
+
+	potentially similar to 8 queens - but more like rooks and they are actually allowed to murder each other just a bit. also six dimensionsal chess hypercube. potentially solve with backtracking
+
+	sphere packing is also relevant but in some special space hypercube whatchammacallit. not euclidean space. also levenshtein distances aren't a euclidean space.
+
+	could get strings by mutating other strings ? randomly, or structuredly. eg triagulating from 2
+
+done:
+
+	generate all possible strings of an alphabet and a length recursively
+
+	used to get 96 codewords with levenshtein sieve
+
+	hopefully, writing a working validity checker and sieve
+	checker
+	sieve
+
+	using polynomial codes https://en.wikipedia.org/wiki/Polynomial_code to generate *binary* codewords
+	class for polynomial codes
+	generating the example binary
+
+	generating random strings and running them through validity_sieve.py, to get 80 codewords
+	random generator
+
+	sieve and checker using levenshtein distance rather than hamming
+	sieve
+	checker
+
+	BK tree class (isn't very efficient)
+	recursive class for BK tree
+	sieve with BK
+
+	hamming codes!!! working programs for
+	possibly erronneous encoded binary > data binary (SEC)
+	data binary > encoded binary (SEC)
+	binary > one bit flipped
+
+	ascii > binary
+	binary > ascii
+
+	get oligotm working
+
+	written demo python for getting a temperature from oligotm and using it in a comparison
+
+	quaternary hamming encoder and decoder <<<
+	data quaternary > encoded quaternary
+	possibly erronneous encoded quaternay > data quaternary
+	quaternary > one quad mutated
+
+	quaternary > dna
+	dna > quaternary
+
+	written oligotm sieve using argparse /0/
+	
+contents of zut:
+
+	two failed attempts at backtracking
+
+	nice multidimensional list initialiser
+
+	recursive backtracking 8 rooks solution
+
+	toyings with the idea of virtually mutating a string to get to the next one - nowhere near as good as full on random
+
+things that would be useful:
+	
+	finding a more efficient way to check and sieve
+
+	better understand the workings of polynomial codes to use them for the task
+
+	finding a relevant application of sphere packing
+
+things that went horribly horribly wrong:
+
+	gaping error in the is_close function in the sieve and check
+
+	backtracking thing isn't really feasible because of collisions allowed
+
+things found:
+	
+	BK trees and levenshtein automata
+
+	hamming codes (currently fantastically broken) D:
+
+	quaternary hamming codes!
+	appears to use (4 - tally) % 4 rather than tally % 4? 
