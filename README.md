@@ -4,3 +4,5 @@ My various projects from my brief work experience at the Wellcome Trust Sanger I
 It also has some simple Python CGI scripts implementing some of the found approaches in a very simplistic web interface.
 
 [Here](https://github.com/elterminad0r/DNA/blob/master/presentation.pdf) is the accompanying presentation I made for the end of my stay.
+
+It's somewhere around the middle of my well-populated to-do list to revisit this and clean it up.
